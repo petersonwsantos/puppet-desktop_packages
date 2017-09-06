@@ -1,0 +1,10 @@
+---
+desktop_packages::package_list:
+  'notepadplusplus':
+    ensure: 7.4.2
+    install_options: ['--allow-downgrade']
+
+  'notepadplusplus.install':
+    ensure: 7.4.2
+    install_options: ['--allow-downgrade']
+

@@ -1,0 +1,28 @@
+{
+  "name": "petersonwsantos-desktop_packages",
+  "version": "0.1.0",
+  "author": "Peterson W Santos",
+  "summary": "https://github.com/petersonwsantos/puppet-desktop_packages",
+  "license": "Apache-2.0",
+  "source": "https://github.com/petersonwsantos/puppet-desktop_packages",
+  "project_page": "https://github.com/petersonwsantos/puppet-desktop_packages",
+  "issues_url": "https://github.com/petersonwsantos/puppet-desktop_packages/issue",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.13.1 < 5.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": [
+        "7",
+        "10"
+      ]
+    }
+  ],
+  "pdk-version": "1.0.1",
+  "template-url": "file://C:/Program Files/Puppet Labs/DevelopmentKit/share/cache/pdk-module-template.git",
+  "template-ref": "heads/master-0-g5db7961"
+}
