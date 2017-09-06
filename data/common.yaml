@@ -6,16 +6,16 @@ desktop_packages::chocolateyconfig_proxyUser: my_user
 desktop_packages::chocolateyconfig_proxyPassword: my_passowrd  
 desktop_packages::package_manage: true
 desktop_packages::package_list:
-  'notepadplusplus':
-    ensure: 7.4.2
-    provider: chocolatey
-    source: https://chocolatey.org/api/v2/
-  'vlc':
-    ensure: latest
-    provider: chocolatey
-    source: https://chocolatey.org/api/v2/ 
-  'googlechrome':
-    ensure: latest
+  #'notepadplusplus':
+  #  ensure: 7.4.2
+  #  provider: chocolatey
+  #  source: https://chocolatey.org/api/v2/
+  #'vlc':
+  #  ensure: latest
+  #  provider: chocolatey
+  #  source: https://chocolatey.org/api/v2/ 
+  #'googlechrome':
+  #  ensure: latest
 
 
 
