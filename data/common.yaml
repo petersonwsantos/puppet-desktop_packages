@@ -8,14 +8,10 @@ desktop_packages::package_manage: true
 desktop_packages::package_list:
   #'notepadplusplus':
   #  ensure: 7.4.2
-  #  provider: chocolatey
-  #  source: https://chocolatey.org/api/v2/
+  #  install_options: ['--allow-downgrade']
+  #'notepadplusplus.install':
+  #  ensure: 7.4.2
+  #  install_options: ['--allow-downgrade']
   #'vlc':
-  #  ensure: latest
-  #  provider: chocolatey
-  #  source: https://chocolatey.org/api/v2/ 
-  #'googlechrome':
-  #  ensure: latest
-
-
-
+  #  ensure: lastet
+  #  install_options: ['--allow-downgrade']
