@@ -8,9 +8,11 @@ class desktop_packages::config  inherits desktop_packages {
 
   # Override default Chocolatey install location
   # ChocolateyInstall=C:\ProgramData\chocolatey
-  #class {'chocolatey':
-  #  choco_install_location => 'C:\ProgramData\chocolatey',
-  #}
+  if $choco_install_location_manage == true {
+    class {'chocolatey':
+      choco_install_location => $choco_install_location_path ,
+    }
+  }
 
   #chocolateysource {'chocolatey':
   #  ensure   => present,
@@ -34,13 +36,16 @@ class desktop_packages::config  inherits desktop_packages {
 
   # Disable the default community repository source
   #chocolateysource {'chocolatey':
-    #  ensure => disabled,
+  #    ensure => disabled,
   #}
+     
 
   #Log chocolatey bootstrap installer script output
-  #class {'chocolatey':
-  #  log_output              => true,
-  #}
+  if $choco_install_log_output == true {
+    class {'chocolatey':
+      log_output => true  ,
+    }
+  } 
 
   # =======================
   # SOURCES CONFIGURATION 
@@ -75,25 +80,29 @@ class desktop_packages::config  inherits desktop_packages {
 
   # Uninstall from Programs and Features without requiring an explicit uninstall script.
   if $chocolateyfeature_autouninstaller != {} {
-
     chocolateyfeature {'autouninstaller':
       ensure => $chocolateyfeature_autouninstaller ,
     }
-  
   }
 
 
-  # ONLY  Chocolatey Pro / Business for this feature.
+  # ** ONLY ** Chocolatey Pro / Business for this feature.
   # Virus Check - Performs virus checking on downloaded files. (Licensed versions only.)
-  #chocolateyfeature {'viruscheck':
-  #  ensure => enabled,
-  #}
-
+  if $chocolateyfeature_viruscheck == true {
+    chocolateyfeature {'viruscheck':
+      ensure => enabled,
+    }
+  }   
+  else {
+    chocolateyfeature {'viruscheck':
+      ensure => disabled,
+    } 
+  }
   # Use Package Exit Codes - Allows package scripts to provide exit codes. 
   # With this enabled, Chocolatey uses package exit codes for exit when non-zero (this value can come from a dependency package). 
   # Chocolatey defines valid exit codes as 0, 1605, 1614, 1641, 3010. With this feature disabled, Chocolatey exits with a 0 or a 1 
   # dafault enabled
-  #chocolateyfeature {'usepackageexitcodes':
+  #hocolateyfeature {'usepackageexitcodes':
   #  ensure => enabled,
   #}
 
@@ -105,6 +114,7 @@ class desktop_packages::config  inherits desktop_packages {
 
   # Unset cache location
   # Removes cache location setting, returning the setting to its default.
+  # C:\ProgramData\chocolatey\.chocolatey
   #chocolateyconfig {'cachelocation':
   #  ensure => absent,
   #}

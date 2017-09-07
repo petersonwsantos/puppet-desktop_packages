@@ -1,4 +1,6 @@
 ---
+desktop_packages::choco_install_location_manage: false
+desktop_packages::choco_install_location_path: 'C:\ProgramData\chocolatey'
 desktop_packages::chocolateyfeature_autouninstaller: enabled
 desktop_packages::chocolateyconfig_proxy_manage: false
 desktop_packages::chocolateyconfig_proxy_server: 'http://192.168.0.1:3128'
