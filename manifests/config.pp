@@ -1,17 +1,9 @@
-# desktop_packages::config
-#
-# A description of what this class does
-#
-# @summary A short summary of the purpose of this class
-#
-# @example
-#   include desktop_packages::config
 class desktop_packages::config  inherits desktop_packages {
 
   # include chocolatey 
 
   # =================================
-  # MANAGE CHOCOLATEY INSTALATION 	
+  # MANAGE CHOCOLATEY INSTALATION   
   # =================================
 
   # Override default Chocolatey install location
