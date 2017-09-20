@@ -29,11 +29,11 @@ class windows_packages(
 
     Package { provider => chocolatey, }
 
-    contain desktop_packages::config
-    contain desktop_packages::install
+    contain windows_packages::config
+    contain windows_packages::install
 
-    Class['::desktop_packages::config']
-    -> Class['::desktop_packages::install']
+    Class['::windows_packages::config']
+    -> Class['::windows_packages::install']
 
   }
 
