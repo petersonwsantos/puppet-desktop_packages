@@ -8,17 +8,20 @@
 #   include windows_packages
 class windows_packages(
   Boolean                     $choco_install_location_manage     = false ,
-  Stdlib::Absolutepath        $choco_install_location_path       = 'C:\ProgramData\chocolatey'
+  String                      $choco_install_location_path       = 'C:\ProgramData\chocolatey',
   Boolean                     $choco_install_log_output          = false ,
   Boolean                     $chocolateyconfig_proxy_manage     = false ,
-  String                      $chocolateyconfig_proxy_server     = undef ,
-  String                      $chocolateyconfig_proxyuser        = undef ,
-  String                      $chocolateyconfig_proxypassword    = undef ,
+  String                      $chocolateyconfig_proxy_server     = 'server_ip',
+  String                      $chocolateyconfig_proxyuser        = 'proxy_user',
+  String                      $chocolateyconfig_proxypassword    = 'proxy_password',
   Enum['enabled','disabled']  $chocolateyfeature_autouninstaller = enabled ,
-  Bolean                      $chocolateyfeature_viruscheck      = false   ,
+  Boolean                      $chocolateyfeature_viruscheck     = false   ,
   Boolean                     $package_manage                    = true  ,
   Hash                        $package_list                      = {}    ,
 ){
+
+  contain stdlib
+
   if $::kernel == 'windows' {
 
     # Ensure Chocolatey is installed and configured:
