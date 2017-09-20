@@ -1,28 +1,32 @@
 {
-  "name": "petersonwsantos-desktop_packages",
+  "name": "petersonwsantos-windows_packages",
   "version": "0.1.0",
-  "author": "Peterson W Santos",
-  "summary": "https://github.com/petersonwsantos/puppet-desktop_packages",
+  "author": "Peterson W. Santos",
+  "summary": "Windows Series - This module makes it easy to install and version control of softwares.",
   "license": "Apache-2.0",
-  "source": "https://github.com/petersonwsantos/puppet-desktop_packages",
-  "project_page": "https://github.com/petersonwsantos/puppet-desktop_packages",
-  "issues_url": "https://github.com/petersonwsantos/puppet-desktop_packages/issue",
+  "source": "https://github.com/petersonwsantos/puppet-windows_packages",
+  "project_page": "https://github.com/petersonwsantos/puppet-windows_packages",
+  "issues_url": "https://github.com/petersonwsantos/puppet-windows_packages/issues",
   "dependencies": [
-    {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 4.13.1 < 5.0.0"
-    }
+
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "windows",
       "operatingsystemrelease": [
-        "7",
+        "2008 R2",
+        "2012 R2",
         "10"
       ]
     }
   ],
-  "pdk-version": "1.0.1",
-  "template-url": "file://C:/Program Files/Puppet Labs/DevelopmentKit/share/cache/pdk-module-template.git",
-  "template-ref": "heads/master-0-g5db7961"
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 6.0.0"
+    }
+  ],
+  "pdk-version": "1.1.0",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-module-template.git",
+  "template-ref": "heads/master-0-g54e88a4"
 }

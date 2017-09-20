@@ -1,16 +1,24 @@
-class desktop_packages::config  inherits desktop_packages {
+# windows_packages::config
+#
+# A description of what this class does
+#
+# @summary A short summary of the purpose of this class
+#
+# @example
+#   include windows_packages::config
+class windows_packages::config inherits windows_packages {
 
-  # include chocolatey 
+  # include chocolatey
 
   # =================================
-  # MANAGE CHOCOLATEY INSTALATION   
+  # MANAGE CHOCOLATEY INSTALATION
   # =================================
 
   # Override default Chocolatey install location
   # ChocolateyInstall=C:\ProgramData\chocolatey
-  if $choco_install_location_manage == true {
+  if $windows_packages::choco_install_location_manage == true {
     class {'chocolatey':
-      choco_install_location => $choco_install_location_path ,
+      choco_install_location => $windows_packages::choco_install_location_path ,
     }
   }
 
@@ -26,7 +34,7 @@ class desktop_packages::config  inherits desktop_packages {
   #  use_7zip                        => false,
   #  choco_install_timeout_seconds   => 2700,
   #}
-  # OR 
+  # OR
   #class {'chocolatey':
   #  chocolatey_download_url         => 'file:///c:/location/of/chocolatey.0.9.9.9.nupkg',
   #  use_7zip                        => false,
@@ -38,17 +46,17 @@ class desktop_packages::config  inherits desktop_packages {
   #chocolateysource {'chocolatey':
   #    ensure => disabled,
   #}
-     
+
 
   #Log chocolatey bootstrap installer script output
-  if $choco_install_log_output == true {
+  if $windows_packages::choco_install_log_output == true {
     class {'chocolatey':
       log_output => true  ,
     }
-  } 
+  }
 
   # =======================
-  # SOURCES CONFIGURATION 
+  # SOURCES CONFIGURATION
   # =======================
 
   # Set a priority on a source
@@ -75,32 +83,32 @@ class desktop_packages::config  inherits desktop_packages {
   #}
 
   # =======================
-  # FEAATURES CONFIGURATION 
+  # FEAATURES CONFIGURATION
   # =======================
 
   # Uninstall from Programs and Features without requiring an explicit uninstall script.
-  if $chocolateyfeature_autouninstaller != {} {
+  if $windows_packages::chocolateyfeature_autouninstaller != {} {
     chocolateyfeature {'autouninstaller':
-      ensure => $chocolateyfeature_autouninstaller ,
+      ensure => $windows_packages::chocolateyfeature_autouninstaller ,
     }
   }
 
 
   # ** ONLY ** Chocolatey Pro / Business for this feature.
   # Virus Check - Performs virus checking on downloaded files. (Licensed versions only.)
-  if $chocolateyfeature_viruscheck == true {
+  if $windows_packages::windows_packages::chocolateyfeature_viruscheck == true {
     chocolateyfeature {'viruscheck':
       ensure => enabled,
     }
-  }   
+  }
   else {
     chocolateyfeature {'viruscheck':
       ensure => disabled,
-    } 
+    }
   }
-  # Use Package Exit Codes - Allows package scripts to provide exit codes. 
-  # With this enabled, Chocolatey uses package exit codes for exit when non-zero (this value can come from a dependency package). 
-  # Chocolatey defines valid exit codes as 0, 1605, 1614, 1641, 3010. With this feature disabled, Chocolatey exits with a 0 or a 1 
+  # Use Package Exit Codes - Allows package scripts to provide exit codes.
+  # With this enabled, Chocolatey uses package exit codes for exit when non-zero (this value can come from a dependency package).
+  # Chocolatey defines valid exit codes as 0, 1605, 614, 1641, 3010. With this feature disabled, Chocolatey exits with a 0 or a 1
   # dafault enabled
   #hocolateyfeature {'usepackageexitcodes':
   #  ensure => enabled,
@@ -109,7 +117,7 @@ class desktop_packages::config  inherits desktop_packages {
 
 
   # =======================
-  # CONFIG CONFIGURATION 
+  # CONFIG CONFIGURATION
   # =======================
 
   # Unset cache location
@@ -128,18 +136,16 @@ class desktop_packages::config  inherits desktop_packages {
   # Use an explicit proxy
   # When using Chocolatey behind a proxy, set proxy and optionally proxyUser and proxyPassword.
   # NOTE: The proxyPassword value is not verifiable.
-  if $chocolateyconfig_proxy_manage == true {
+  if $windows_packages::chocolateyconfig_proxy_manage == true {
     chocolateyconfig {'proxy':
-      value  => $chocolateyconfig_proxy_server,
+      value  => $windows_packages::chocolateyconfig_proxy_server,
     }
     chocolateyconfig {'proxyUser':
-      value  => $chocolateyconfig_proxyUser,
+      value  => $windows_packages::chocolateyconfig_proxyuser,
     }
     chocolateyconfig {'proxyPassword':
-      value  => $chocolateyconfig_proxyPassword,
+      value  => $windows_packages::chocolateyconfig_proxypassword,
     }
-  } 
+  }
 
 }
-
-

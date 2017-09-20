@@ -1,13 +1,13 @@
 
-# desktop_packages
+# windows_packages
 
 #### Table of Contents
 
 1. [Description](#description)
-2. [Setup - The basics of getting started with desktop_packages](#setup)
-    * [What desktop_packages affects](#what-desktop_packages-affects)
+2. [Setup - The basics of getting started with windows_packages](#setup)
+    * [What windows_packages affects](#what-windows_packages-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with desktop_packages](#beginning-with-desktop_packages)
+    * [Beginning with windows_packages](#beginning-with-windows_packages)
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -21,7 +21,7 @@ You can give more descriptive information in a second paragraph. This paragraph 
 
 ## Setup
 
-### What desktop_packages affects **OPTIONAL**
+### What windows_packages affects **OPTIONAL**
 
 If it's obvious what your module touches, you can skip this section. For example, folks can probably figure out that your mysql_instance module affects their MySQL instances.
 
@@ -37,7 +37,7 @@ If your module requires anything extra before setting up (pluginsync enabled, an
   
 If your most recent release breaks compatibility or requires particular steps for upgrading, you might want to include an additional "Upgrading" section here.
 
-### Beginning with desktop_packages  
+### Beginning with windows_packages  
 
 The very basic steps needed for a user to get the module up and running. This can include setup steps, if necessary, or it can be an example of the most basic use of the module.
 

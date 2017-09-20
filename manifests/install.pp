@@ -1,18 +1,22 @@
-class desktop_packages::install inherits desktop_packages {
+# windows_packages::install
+#
+# A description of what this class does
+#
+# @summary A short summary of the purpose of this class
+#
+# @example
+#   include windows_packages::install
+class windows_packages::install inherits windows_packages {
 
-  #$package_manage = lookup('desktop_packages::package_manage', {value_type => Boolean, default_value => 'true' })
-  #$package_list = lookup('desktop_packages::package_list', {value_type => Hash, default_value => {} })
+  if $windows_packages::package_list  != {} {
 
-  if $package_list  != {} {
-    $package_list .each | $k,$v | {
+    $windows_packages::package_list .each | $k,$v | {
       package { $k:
         * => $v,
       }
     }
+
   }
 
 }
- 
 
-
- 

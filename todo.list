@@ -1,0 +1,3 @@
+puppet lint error
+http://puppet-lint.com/checks/variable_scope/
+https://docs.puppet.com/puppet/latest/style_guide.html#namespacing-variables
