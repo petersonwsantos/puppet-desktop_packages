@@ -8,7 +8,7 @@
 #   include windows_packages
 class windows_packages(
   Boolean                     $choco_install_location_manage     = false ,
-  Stdlib::Absolutepath        $choco_install_location_path       = 'C:\ProgramData\chocolatey'
+  Stdlib::Absolutepath        $choco_install_location_path       = 'C:\ProgramData\chocolatey',
   Boolean                     $choco_install_log_output          = false ,
   Boolean                     $chocolateyconfig_proxy_manage     = false ,
   String                      $chocolateyconfig_proxy_server     = undef ,
