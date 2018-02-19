@@ -7,17 +7,17 @@
 # @example
 #   include windows_packages
 class windows_packages(
-  Boolean                     $choco_install_location_manage     = false ,
-  Stdlib::Absolutepath        $choco_install_location_path       = 'C:\ProgramData\chocolatey',
-  Boolean                     $choco_install_log_output          = false ,
-  Boolean                     $chocolateyconfig_proxy_manage     = false ,
-  String                      $chocolateyconfig_proxy_server     = undef ,
-  String                      $chocolateyconfig_proxyuser        = undef ,
-  String                      $chocolateyconfig_proxypassword    = undef ,
-  Enum['enabled','disabled']  $chocolateyfeature_autouninstaller = enabled ,
-  Bolean                      $chocolateyfeature_viruscheck      = false   ,
-  Boolean                     $package_manage                    = true  ,
-  Hash                        $package_list                      = {}    ,
+  Boolean                        $choco_install_location_manage     = false ,
+  Optional[Stdlib::Absolutepath] $choco_install_location_path       = 'C:\ProgramData\chocolatey',
+  Boolean                        $choco_install_log_output          = false ,
+  Boolean                        $chocolateyconfig_proxy_manage     = false ,
+  String                         $chocolateyconfig_proxy_server     = undef ,
+  String                         $chocolateyconfig_proxyuser        = undef ,
+  String                         $chocolateyconfig_proxypassword    = undef ,
+  Enum['enabled','disabled']     $chocolateyfeature_autouninstaller = enabled ,
+  Bolean                         $chocolateyfeature_viruscheck      = false   ,
+  Boolean                        $package_manage                    = true  ,
+  Hash                           $package_list                      = {}    ,
 ){
   if $::kernel == 'windows' {
 
