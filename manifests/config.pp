@@ -83,7 +83,7 @@ class windows_packages::config inherits windows_packages {
   #}
 
   # =======================
-  # FEAATURES CONFIGURATION
+  # FEATURES CONFIGURATION
   # =======================
 
   # Uninstall from Programs and Features without requiring an explicit uninstall script.
