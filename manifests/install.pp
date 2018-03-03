@@ -19,4 +19,3 @@ class windows_packages::install inherits windows_packages {
   }
 
 }
-
