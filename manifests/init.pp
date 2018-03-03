@@ -10,7 +10,7 @@ class windows_packages(
   Boolean                        $choco_install_location_manage     = false,
   Boolean                        $choco_install_log_output          = false,
   Boolean                        $chocolateyconfig_proxy_manage     = false,
-  String                         $chocolateyconfig_proxy_server     = undef,
+  String                         $chocolateyconfig_proxy_server     = proxy_ip,
   String                         $chocolateyconfig_proxyuser        = proxy_user,
   String                         $chocolateyconfig_proxypassword    = proxy_password,
   Enum['enabled','disabled']     $chocolateyfeature_autouninstaller = 'enabled',
