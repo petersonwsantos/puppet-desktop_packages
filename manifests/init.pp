@@ -14,7 +14,7 @@ class windows_packages(
   String                         $chocolateyconfig_proxyuser        = undef,
   String                         $chocolateyconfig_proxypassword    = undef,
   Enum['enabled','disabled']     $chocolateyfeature_autouninstaller = 'enabled',
-  Bolean                         $chocolateyfeature_viruscheck      = false,
+  Boolean                        $chocolateyfeature_viruscheck      = false,
   Boolean                        $package_manage                    = true,
   Hash                           $package_list                      = {},
 ){
@@ -34,5 +34,3 @@ class windows_packages(
   }
 
 }
-
-

@@ -110,7 +110,7 @@ class windows_packages::config inherits windows_packages {
   # With this enabled, Chocolatey uses package exit codes for exit when non-zero (this value can come from a dependency package).
   # Chocolatey defines valid exit codes as 0, 1605, 614, 1641, 3010. With this feature disabled, Chocolatey exits with a 0 or a 1
   # dafault enabled
-  #hocolateyfeature {'usepackageexitcodes':
+  # chocolateyfeature {'usepackageexitcodes':
   #  ensure => enabled,
   #}
 
@@ -123,7 +123,7 @@ class windows_packages::config inherits windows_packages {
   # Unset cache location
   # Removes cache location setting, returning the setting to its default.
   # C:\ProgramData\chocolatey\.chocolatey
-  #chocolateyconfig {'cachelocation':
+  # chocolateyconfig {'cachelocation':
   #  ensure => absent,
   #}
 
